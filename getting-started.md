@@ -7,12 +7,9 @@ To initiate the booking process, the following JSON configuration must be genera
     "wallet_balance": 30000,
     "success_url": "https://example.sastotickets.com/success",
     "failure_url": "https://example.sastotickets.com/failure",
-    "msisdn": "--" //this is optional
 }
 ```
-!!! note
-
-    *wallet_balance* can be set to null if restriction related to amount is NOT required when booking.
+> **Note:** *wallet_balance* can be set to null if restriction related to amount is NOT required when booking.
 
 ### Base64 Encoding and URL Construction
 1. Convert the JSON configuration to a Base64-encoded string.
@@ -32,7 +29,7 @@ The SDK facilitates the flight search functionality and the availability of sele
 - The app will have to handle the redirection URLs to capture success or failure responses:
 
 #### Success
-For success: `https://example.sastotickets.com/success?data=<data>` as set in the JSON.
+For success: `https://your-handler/success?data=<data>` as set in the JSON.
 Example:
 
     https://example.sastotickets.com/success?data=eyJ0b3RhbENvc3QiOjQ0MDcsImJlYXJlclRva2VuIjoiZXlKMGVYQWlPaUpLVjFRaUxDSmhiR2NpT2lKSVV6STFOaUo5LmV5SnBjM01pT2lKb2RIUndPbHd2WEM5aGNHa3VjMkZ6ZEc5MGFXTnJaWFJ6TG1OdmJWd3ZZWEJwWEM5aU1tSmNMM1l4WEM5blpYUXRkRzlyWlc0aUxDSnBZWFFpT2pFMk9EVTROamN6Tmpnc0ltNWlaaUk2TVRZNE5UZzJOek0yT0N3aWFuUnBJam9pVVc4MmExWkZNVGxMY1ZCcVZrSkNaeUlzSW5OMVlpSTZOeXdpY0hKMklqb2laakkzWkdKbU16YzVNR1UzWWpGbVkyRTRaR1ppTm1NNE9HVm1PVFZoWmprd05EWmhPRGhtWXlKOS4wREhFMzNIUWpJeUZGTzZPQ00zSlB5a3FMeGNBVDFpSXBuYzExUTBYVU1NIiwiZmxpZ2h0U3VtbWFyeSI6eyJkZXBhcnR1cmVGbGlnaHQiOnsiY2FycmllckNvZGUiOiJTMSIsImNhcnJpZXJMb2dvIjoiaHR0cHM6Ly9zYXN0b3RpY2tldHMtdWF0LWZsaWdodHMuczMuYXAtc291dGhlYXN0LTEuYW1hem9uYXdzLmNvbS9haXJsaW5lcy8xNTYyNTc4NTQ4LTUzMzk4Mi5wbmciLCJjYXJyaWVyTmFtZSI6IlNhdXJ5YSBBaXJsaW5lcyIsImRlcHREYXRlIjoiMjAyNS0wMy0xNSIsImRlcHRUaW1lIjoiMDg6MDAgQU0iLCJhcnJpdmFsRGF0ZSI6IjIwMjUtMDMtMTUiLCJhcnJpdmFsVGltZSI6IjA4OjMwIEFNIiwiZGVwYXJ0dXJlQWlycG9ydENvZGUiOiJLVE0iLCJkZXBhcnR1cmVBaXJwb3J0IjoiVHJpYmh1dmFuIEludOKAmWwgQWlycG9ydCIsImRlcGFydHVyZUNpdHkiOiJLYXRobWFuZHUiLCJkZXBhcnR1cmVDb3VudHJ5IjoiTmVwYWwiLCJhcnJpdmFsQWlycG9ydENvZGUiOiJQS1IiLCJhcnJpdmFsQWlycG9ydCI6IlBva2hhcmEgQWlycG9ydCIsImFycml2YWxDaXR5IjoiUG9raGFyYSIsImFycml2YWxDb3VudHJ5IjoiTmVwYWwifSwicmV0dXJuRmxpZ2h0IjpudWxsfSwiZW1lcmdlbmN5Q29udGFjdCI6eyJjb250YWN0IjoiOTg0MDAxMDE5MSIsImVtYWlsIjoic29uYWFtLmhpdGFuZ0BnbWFpbC5jb20iLCJuYW1lIjoiQW5pbCBSYXlhbWFqaGkifSwiYm9va2luZ1N1bW1hcnkiOnsiUE5SIjoiSVVTUDFDIiwiYm9va2luZ1JlZmVyZW5jZUlEIjoiZDU2ODBlZDctYTI3ZC00ZDc2LTg5MjEtMmE2MGI0YWFlODY2IiwiY3VycmVuY3kiOiJOUFIiLCJwYXNzZW5nZXJzIjpbeyJwYXNzZW5nZXJfaWQiOiJTVDI0NjY4IiwicGFzc2VuZ2VyX3R5cGUiOiJBRFQiLCJwYXNzZW5nZXJfbmFtZSI6IlJheWFtYWpoaSBBbmlsIn1dLCJ0cmlwVHlwZSI6Im9uZXdheSJ9fQ==
