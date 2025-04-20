@@ -1,0 +1,1 @@
+import{_ as t,c as o,o as s,ae as a}from"./chunks/framework.Dh1jimFm.js";const d=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"redirect.md","filePath":"redirect.md"}'),r={name:"redirect.md"};function n(c,e,p,l,u,i){return s(),o("div",null,e[0]||(e[0]=[a("",1)]))}const m=t(r,[["render",n]]);export{d as __pageData,m as default};
