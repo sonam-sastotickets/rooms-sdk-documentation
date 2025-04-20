@@ -2,12 +2,17 @@
 
 ## Introduction
 
-The Sasto Tickets Web-Based SDK enables seamless integration of flight booking and ticketing features into vendor applications. Designed for B2C use, the SDK simplifies the interaction by allowing vendors to manage payment and ticket issuance while we handle the core booking operations.
+The Sasto Tickets Web-Based SDK enables seamless integration of rooms booking and ticketing features into vendor applications. Designed for B2C use, the SDK simplifies the interaction by allowing vendors to manage payment and ticket issuance while we handle the core booking operations.
 
-### Setting Up:
+## Setting Up
 Vendors need to set up an business account with us. They will be provided with the **BASE_API_URL** and credentials for both UAT (User Acceptance Testing) and live environments by our Team.
 
-### How It Works:
+**Example:**
+```
+BASE_API_URL = domain_name/api/v1
+```
+
+## How It Works
 
 <!-- ![Image title](images/st-b2c.png) -->
 
@@ -24,25 +29,24 @@ The vendor’s app manages the payment process using the data provided by the SD
 
 ### Step 4: Issue Ticket
 
-The vendor’s backend calls the `issue-ticket` API to confirm the booking and issue tickets.
+The vendor’s backend calls the `issue-eticket` API to confirm the booking and issue tickets.
 
 > **Note:** Step 2 is fully managed by our SDK, while other steps are handled by the vendor’s system.
 
----
 
 ## FAQ
 
 ### 1. **What is the Sasto Tickets B2C SDK?**
    - It is a web-based solution for integrating rooms booking and ticketing features into vendor applications.
-   - It simplifies the process by handling rooms search, availability, and reservation workflows.
+   - It simplifies the process by handling rooms search, check availability, and reservation workflows.
 
 ### 2. **Who manages the payment process?**
    - The vendor’s system is responsible for managing and securing the payment process. The SDK only facilitates the booking process and provides necessary data.
 
 ### 3. **What parts of the workflow does the SDK handle?**
    - The SDK manages:
-     - Roooms Search
-     - Availability
+     - Rooms Search
+     - Check Availability
      - Reservation
    - The vendor’s system handles:
      - Payment
