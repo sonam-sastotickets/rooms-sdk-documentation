@@ -9,7 +9,7 @@ Vendors need to set up an business account with us. They will be provided with t
 
 ### How It Works:
 
-![Image title](images/st-b2c.png)
+<!-- ![Image title](images/st-b2c.png) -->
 
 ### Step 1: Get Token: 
 Using the provided credentials, vendors must call our `get-token` API from their backend to obtain an access token. This token is essential for interacting with other SDK endpoints and must be passed during redirection as outlined in the documentation.
