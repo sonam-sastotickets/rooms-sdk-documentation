@@ -18,11 +18,11 @@ export default defineConfig({
           { text: 'Authorization', link: '/authorization' },
           { text: 'Integration with Apps', link: '/getting-started' },
           { text: 'Payment', link: '/payment' },
+          { text: 'Ticket Details', link: '/details' },
           { text: 'Ticketing', link: '/ticketing' },
           { text: 'Download eTicket', link: '/download' },
           { text: 'All Tickets', link: '/all-tickets' },
-          { text: 'Ticket Details', link: '/details' },
-          { text: 'Postman', link: '/postman' },
+          // { text: 'Postman', link: '/postman' },
           // { text: 'Booking', link: '/booking' },
           // { text: 'Postman', link: '/postman' },
         ]
