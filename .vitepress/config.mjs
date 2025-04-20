@@ -24,7 +24,7 @@ export default defineConfig({
           { text: 'Download eTicket', link: '/download' },
           { text: 'Send eTicket', link: '/send-eticket' },
           { text: 'All Tickets', link: '/all-tickets' },
-          { text: 'SDK Test Tool', link: '/files/tool.html' },
+          { text: 'SDK Test Tool', link: 'ttps://sonam-sastotickets.github.io/rooms-sdk-documentation/files/tool.htmltool.html' },
           
           // { text: 'Booking', link: '/booking' },
           // { text: 'Postman', link: '/postman' },
