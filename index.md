@@ -26,7 +26,7 @@ The vendor’s app manages the payment process using the data provided by the SD
 
 The vendor’s backend calls the `issue-ticket` API to confirm the booking and issue tickets.
 
-> **Note:** Steps 2 is fully managed by our SDK, while other steps are handled by the vendor’s system.
+> **Note:** Step 2 is fully managed by our SDK, while other steps are handled by the vendor’s system.
 
 ---
 

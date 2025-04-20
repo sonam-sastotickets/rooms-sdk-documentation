@@ -12,14 +12,14 @@ Authorization : Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwv
 |-------------------------|---------------------|--------------|------------------------------------------------------------|------------------------------|
 | `stBookingCode`         | `string`            | Required     | stbookingCode from booking response                        |                              |
 
-### Sample Ticket Details Request
+## Sample Request
 ```json
 {
      "stBookingCode" : "{{stBookingCode}}"
 }
 ```
 
-### Sample Ticket Details Response
+## Sample Response
 ```json
 {
     "success": true,
@@ -66,7 +66,7 @@ Authorization : Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwv
 }
 ```
 
-### Sample Error Response
+## Sample Error Response
 *Case: Validation Error*
 ```json
 {

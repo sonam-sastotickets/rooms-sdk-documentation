@@ -15,14 +15,14 @@ Authorization : Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwv
 | `stBookingCode`         | `string`            | Required     | stbookingCode from booking response                        |                              |
 
 
-### Sample Booking Request
+## Sample Request
 ```json
 {
     "stBookingCode" : "{{stBookingCode}}"
 }
 ``` 
 
-### Sample Booking Response
+## Sample Response
 
 ``` json
 {
@@ -71,7 +71,7 @@ Authorization : Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwv
 }
 ```
 
-### Sample Error Response
+## Sample Error Response
 
 *Case: Validation Error*
 ```json
