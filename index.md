@@ -9,7 +9,7 @@ Vendors need to set up an business account with us. They will be provided with t
 
 **Example:**
 ```
-BASE_API_URL = domain_name/api/v1
+BASE_API_URL = <domain_name>/api/v1
 ```
 
 ## How It Works
