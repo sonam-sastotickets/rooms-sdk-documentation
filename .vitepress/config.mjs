@@ -24,6 +24,7 @@ export default defineConfig({
           { text: 'Download eTicket', link: '/download' },
           { text: 'Send eTicket', link: '/send-eticket' },
           { text: 'All Tickets', link: '/all-tickets' },
+          { text: 'SDK Test Tool', link: '/files/tool.html' },
           
           // { text: 'Booking', link: '/booking' },
           // { text: 'Postman', link: '/postman' },

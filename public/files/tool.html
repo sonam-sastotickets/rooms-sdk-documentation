@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Generate SastoTickets Booking URL</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.9.4/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2563eb',
+                        secondary: '#dc2626',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .btn-primary {
+            background-color: #2563eb !important;
+            border-color: #2563eb !important;
+        }
+        .btn-primary:hover {
+            background-color: #1d4ed8 !important;
+            border-color: #1d4ed8 !important;
+        }
+        .alert-info {
+            background-color: #eff6ff !important;
+            border-color: #dbeafe !important;
+            color: #1e40af !important;
+        }
+        .text-primary {
+            color: #2563eb !important;
+        }
+        .text-secondary {
+            color: #dc2626 !important;
+        }
+        .header-logo {
+            height: 32px;
+            width: auto;
+        }
+        .compact-form {
+            gap: 0.5rem;
+        }
+        .compact-form .form-control {
+            margin-bottom: 0.5rem;
+        }
+        .compact-form .label {
+            padding: 0.25rem 0;
+        }
+        .compact-form .input {
+            padding: 0.5rem;
+            min-height: 2rem;
+        }
+        .compact-form .divider {
+            margin: 0.75rem 0;
+        }
+        .footer {
+            text-align: center;
+            padding: 1rem 0;
+            font-size: 0.75rem;
+            color: #6b7280;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+        }
+        .footer a {
+            color: #2563eb;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        .footer-separator {
+            color: #d1d5db;
+        }
+    </style>
+</head>
+
+<body class="min-h-screen bg-base-200">
+    <div class="container mx-auto p-2 max-w-5xl">
+        <div class="flex items-center justify-center mb-4">
+            <img src="logo.png" alt="SastoTickets Logo" class="header-logo" />
+        </div>
+        <div class="card bg-base-100">
+            <div class="card-body p-4">
+                <div class="flex flex-col items-center gap-2 mb-4">
+                    <h2 class="card-title text-xl font-bold text-primary text-center">SASTOTICKETS ROOMS SDK HELPER</h2>
+                    <a href="https://sonam-sastotickets.github.io/rooms-sdk-documentation/" target="_blank" class="text-sm text-primary hover:underline flex items-center gap-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                        </svg>
+                        View Full Documentation
+                    </a>
+                </div>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+                    <div class="space-y-4 compact-form">
+                        <div class="text-sm font-semibold text-primary">SDK Configuration</div>
+                        
+                        <div class="form-control">
+                            <label class="label py-1">
+                                <span class="label-text text-primary">API URL</span>
+                            </label>
+                            <input type="text" id="api_url" value="https://st-rooms-api.skybase-dev.com/api/v1" class="input input-bordered input-sm" />
+                            <label class="label py-1">
+                                <span class="label-text-alt text-xs">Base URL for the API endpoints</span>
+                            </label>
+                        </div>
+
+                        <div class="form-control">
+                            <label class="label py-1">
+                                <span class="label-text text-primary">Get Token URL</span>
+                            </label>
+                            <div class="bg-base-200 p-2 rounded-lg font-mono text-xs" id="token_url_preview">https://st-rooms-api.skybase-dev.com/api/v1/b2b/auth/get-token</div>
+                            <label class="label py-1">
+                                <span class="label-text-alt text-xs">Automatically generated based on API URL</span>
+                            </label>
+                        </div>
+
+                        <div class="form-control">
+                            <label class="label py-1">
+                                <span class="label-text text-primary">Web SDK URL</span>
+                            </label>
+                            <input type="text" id="b2c_url" value="https://st-rooms-sdk.skybase-dev.com" class="input input-bordered input-sm" />
+                            <label class="label py-1">
+                                <span class="label-text-alt text-xs">Base URL for the Web SDK interface</span>
+                            </label>
+                        </div>
+
+                        <div class="divider"></div>
+
+                        <div class="text-sm font-semibold text-primary">SDK Credentials</div>
+                        <div class="text-xs text-gray-500 mb-2">These credentials will be provided to you by our SDK team</div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
+                            <div class="form-control">
+                                <label class="label py-1">
+                                    <span class="label-text text-primary">Username</span>
+                                </label>
+                                <input type="text" id="username" value="imepay@sastotickets.com" class="input input-bordered input-sm" />
+                            </div>
+
+                            <div class="form-control">
+                                <label class="label py-1">
+                                    <span class="label-text text-primary">Password</span>
+                                </label>
+                                <div class="relative">
+                                    <input type="password" id="password" value="7yIRifnQJ7Ur" class="input input-bordered input-sm w-full pr-10" />
+                                    <button type="button" class="absolute right-2 top-1/2 -translate-y-1/2 text-gray-500 hover:text-gray-700" onclick="togglePassword()">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" id="password-toggle">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="divider"></div>
+
+                        <div class="text-sm font-semibold text-primary">User Information</div>
+                        <div class="text-xs text-gray-500 mb-2">This information will come from your application/database</div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
+                            <div class="form-control">
+                                <label class="label py-1">
+                                    <span class="label-text text-primary">Phone Number</span>
+                                </label>
+                                <input type="text" id="phone" value="9800000000" class="input input-bordered input-sm" />
+                            </div>
+
+                            <div class="form-control">
+                                <label class="label py-1">
+                                    <span class="label-text text-primary">Wallet Balance</span>
+                                </label>
+                                <input type="number" id="wallet_balance" value="300000" class="input input-bordered input-sm" />
+                                <label class="label py-1">
+                                    <span class="label-text-alt text-xs">Optional - Leave blank if not applicable</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="divider"></div>
+
+                        <div class="text-sm font-semibold text-primary">Redirect URLs</div>
+
+                        <div class="form-control">
+                            <label class="label py-1">
+                                <span class="label-text text-primary">Success URL</span>
+                            </label>
+                            <input type="text" id="success_url" value="https://example.sastotickets.com/success" class="input input-bordered input-sm" />
+                            <label class="label py-1">
+                                <span class="label-text-alt text-xs">URL to redirect after successful booking</span>
+                            </label>
+                        </div>
+
+                        <div class="form-control">
+                            <label class="label py-1">
+                                <span class="label-text text-primary">Failure URL</span>
+                            </label>
+                            <input type="text" id="failure_url" value="https://example.sastotickets.com/failure" class="input input-bordered input-sm" />
+                            <label class="label py-1">
+                                <span class="label-text-alt text-xs">URL to redirect after failed booking</span>
+                            </label>
+                        </div>
+
+                        <button onclick="generateURL()" class="btn btn-primary btn-sm w-full mt-2">Generate Booking URL</button>
+                    </div>
+
+                    <div class="card bg-base-100">
+                        <div class="card-body p-4">
+                            <div class="alert alert-info py-2">
+                                <div>
+                                    <h3 class="font-bold text-primary text-sm">Important !</h3>
+                                    <div class="text-xs">The following credentials will be provided to you by our team based on your environment:</div>
+                                    <ul class="list-disc list-inside mt-1 text-xs">
+                                        <li>API URL</li>
+                                        <li>Web SDK URL</li>
+                                        <li>Username</li>
+                                        <li>Password</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <h3 class="card-title text-primary text-sm">Generated URL</h3>
+                            <pre><code id="output" class="bg-base-200 p-2 rounded-lg font-mono text-xs whitespace-pre-wrap break-all">Your generated URL will appear here...</code></pre>
+
+                            <div class="flex gap-2 mt-2">
+                                <button id="copy_url" class="btn btn-outline btn-sm flex-1" style="display: none;" onclick="copyURL()">
+                                    Copy URL
+                                </button>
+                                <button id="visit_url" class="btn btn-primary btn-sm flex-1" style="display: none;" onclick="visitURL()">
+                                    Visit URL
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <a href="https://sonam-sastotickets.github.io/rooms-sdk-documentation/" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                </svg>
+                Documentation
+            </a>
+            <span class="footer-separator">•</span>
+            <span class="text-gray-600">Having issues?</span>
+            <a href="mailto:sonam@sastotickets.com">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+                Contact
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // Update token URL preview when API URL changes
+        document.getElementById('api_url').addEventListener('input', function () {
+            const apiUrl = this.value.trim();
+            document.getElementById('token_url_preview').textContent =
+                apiUrl + (apiUrl.endsWith('/') ? '' : '/') + 'b2b/auth/get-token';
+        });
+
+        let generatedUrl = '';
+
+        async function generateURL() {
+            const apiUrl = document.getElementById('api_url').value.trim();
+            const b2cUrl = document.getElementById('b2c_url').value.trim();
+            const username = document.getElementById('username').value.trim();
+            const password = document.getElementById('password').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const walletBalance = document.getElementById('wallet_balance').value;
+            const successUrl = document.getElementById('success_url').value.trim();
+            const failureUrl = document.getElementById('failure_url').value.trim();
+            const output = document.getElementById('output');
+            const copyButton = document.getElementById('copy_url');
+            const visitButton = document.getElementById('visit_url');
+
+            if (!apiUrl || !b2cUrl || !username || !password || !phone) {
+                alert("Please fill all required fields.");
+                return;
+            }
+
+            try {
+                const res = await fetch(`${apiUrl}/b2b/auth/get-token`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        username: username,
+                        password: password
+                    })
+                });
+
+                const data = await res.json();
+
+                if (!res.ok || !data.success) {
+                    throw new Error(data.data?.error || `Login failed (${res.status})`);
+                }
+
+                const accessToken = data.data?.token;
+
+                if (!accessToken) {
+                    throw new Error("Access token not found in response.");
+                }
+
+                const payload = {
+                    access_token: accessToken,
+                    phone_number: phone,
+                    wallet_balance: walletBalance ? parseInt(walletBalance) : null,
+                    success_url: successUrl,
+                    failure_url: failureUrl
+                };
+
+                const base64Data = btoa(JSON.stringify(payload));
+                generatedUrl = `${b2cUrl}/?data=${base64Data}`;
+                output.textContent = generatedUrl;
+                copyButton.style.display = 'block';
+                visitButton.style.display = 'block';
+                
+                // Scroll to top of the page
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+
+            } catch (err) {
+                output.textContent = `Error: ${err.message}`;
+                copyButton.style.display = 'none';
+                visitButton.style.display = 'none';
+            }
+        }
+
+        function copyURL() {
+            if (generatedUrl) {
+                navigator.clipboard.writeText(generatedUrl).then(() => {
+                    const button = document.getElementById('copy_url');
+                    button.innerHTML = 'Copied!';
+                    setTimeout(() => {
+                        button.innerHTML = 'Copy URL';
+                    }, 2000);
+                });
+            }
+        }
+
+        function visitURL() {
+            if (generatedUrl) {
+                window.open(generatedUrl, '_blank');
+            }
+        }
+
+        function togglePassword() {
+            const passwordInput = document.getElementById('password');
+            const toggleIcon = document.getElementById('password-toggle');
+            
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                toggleIcon.innerHTML = `
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.88 9.88l-3.29-3.29m7.532 7.532l3.29 3.29M3 3l3.59 3.59m0 0A9.953 9.953 0 0112 5c4.478 0 8.268 2.943 9.543 7a10.025 10.025 0 01-4.132 5.411m0 0L21 21" />
+                `;
+            } else {
+                passwordInput.type = 'password';
+                toggleIcon.innerHTML = `
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                `;
+            }
+        }
+    </script>
+</body>
+
+</html>

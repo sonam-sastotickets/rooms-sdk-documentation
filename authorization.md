@@ -2,7 +2,7 @@
 
 ## Get Access Token
 ```
-    Endpoint: ~/b2b/auth/get-token
+    Endpoint: API_URL~/b2b/auth/get-token
     Method: Post
     Header Params: Content-Type: application/json
     Body Params:   username: "agent@example.com"
@@ -14,13 +14,13 @@
     "success": true,
     "data": {
         "tokenType": "Bearer",
-        "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9nZHMtYWRtaW4udGVzdFwvYXBpXC9pbnRsXC9hbmRyb2lkXC9pbml0aWFsaXplIiwiaWF0IjoxNjEzMzg1ODY3LCJleHAiOjE2MTMzODk0NjcsIm5iZiI6MTYxMzM4NTg2NywianRpIjoiY3o2eFZLdEVkd05jTTRVcCIsInN1YiI6MTMsInBydiI6IjQyZWRlMzMzNGEwNGNkNjVjYjJiZTNmNWFkZmViMmMxZWRkMzA3NzQifQ.UzEWszpOW92jOqSkdciWoGV4456CdS1nuPx7Tql-_Xk",
+        "token": "ey....",
         "b2b_details": {
-            "full_name": "skybase",
-            "company_name": "Skybase Innovations",
+            "full_name": "John Doe",
+            "company_name": "Some Company",
             "company_code": "IT",
-            "api_username": "skybase@yopmail.com",
-            "email": "skybase@yopmail.com",
+            "api_username": "company@test.test",
+            "email": "company@test.test",
             "customer_login": "No"
         }
     }

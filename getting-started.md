@@ -1,10 +1,10 @@
 # Integration
 
-## JSON Configuration for Booking
-To initiate the booking process, the following JSON configuration must be generated:
+## JSON Configuration for Initiating SDK
+To initiate the sdk process, the following JSON configuration must be generated:
 ```json
 {
-    "access_token": "<accessToken from previous step>",
+    "access_token": "<token from previous step>",
     "phone_number": 9800000000, //or unique ID from your system
     "wallet_balance": 30000,
     "success_url": "https://example.sastotickets.com/success",
@@ -12,12 +12,11 @@ To initiate the booking process, the following JSON configuration must be genera
 }
 ```
 > **Note:** *wallet_balance* can be set to null if restriction related to amount is NOT required when booking.
-
 ## Base64 Encoding and URL Construction
 1. Convert the JSON configuration to a Base64-encoded string.
 2. Append the encoded string to the base URL provided by the Sasto Tickets Team as follows:
    ```
-   https://<b2c_url>/?data=<encoded base64 value>
+   https://<SDK_URL>/?data=<encoded base64 value>
    ```
 
 ### Open the URL in the App

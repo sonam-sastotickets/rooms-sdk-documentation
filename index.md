@@ -5,16 +5,11 @@
 The Sasto Tickets Web-Based SDK enables seamless integration of rooms booking and ticketing features into vendor applications. Designed for B2C use, the SDK simplifies the interaction by allowing vendors to manage payment and ticket issuance while we handle the core booking operations.
 
 ## Setting Up
-Vendors need to set up an business account with us. They will be provided with the **BASE_API_URL** and credentials for both UAT (User Acceptance Testing) and live environments by our Team.
-
-**Example:**
-```
-BASE_API_URL = <domain_name>/api/v1
-```
+Vendors need to set up an business account with us. They will be provided with the **API_URL**, **SDK_URL** and credentials **(USERNAME & PASSWORD)** for both UAT (User Acceptance Testing) and live environments by our Team.
 
 ## How It Works
 
-<!-- ![Image title](images/st-b2c.png) -->
+![An image](/images/st-b2c.png)
 
 ### Step 1: Get Token: 
 Using the provided credentials, vendors must call our `get-token` API from their backend to obtain an access token. This token is essential for interacting with other SDK endpoints and must be passed during redirection as outlined in the documentation.
