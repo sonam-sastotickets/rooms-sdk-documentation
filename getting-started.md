@@ -1,4 +1,6 @@
-### JSON Configuration for Booking
+# Integration
+
+## JSON Configuration for Booking
 To initiate the booking process, the following JSON configuration must be generated:
 ```json
 {
@@ -11,7 +13,7 @@ To initiate the booking process, the following JSON configuration must be genera
 ```
 > **Note:** *wallet_balance* can be set to null if restriction related to amount is NOT required when booking.
 
-### Base64 Encoding and URL Construction
+## Base64 Encoding and URL Construction
 1. Convert the JSON configuration to a Base64-encoded string.
 2. Append the encoded string to the base URL provided by the Sasto Tickets Team as follows:
    ```
@@ -22,10 +24,10 @@ To initiate the booking process, the following JSON configuration must be genera
 Once the URL is constructed, open it in a web view or browser within your app to initiate the booking process.
 
 ### Rooms Search & Booking
-The SDK facilitates the rooms search functionality and the availability of selected roomms and provides detailed options. The SDK handles rooms reservation, returning booking details to the vendor.
+The SDK facilitates the rooms search functionality and the availability of selected rooms and provides detailed options. The SDK handles rooms reservation, returning booking details to the vendor.
 
 ### Capturing Response
-- Once the SDK URL is open in a web view or browser within your app, users can use our solution to search and book a room
+- Once the SDK URL is open in a web view or browser within your app, users can use our solution to search and book a room.
 - The app will have to handle the redirection URLs to capture success or failure responses:
 
 #### Success
@@ -39,48 +41,48 @@ Example:
     
 > **Note:** You will have to decode the data captured from base64 to get the json response, The data from this step will be used in the Ticketing API
 
-```
+```json
+{
+  "code": "RM-X6NGLV-HITANG",
+  "source": "STR-S-101",
+  "stBookingCode": "RM-X6NGLV-HITANG",
+  "searchKey": "c111110f-501b-414d-b53b-1782baa305ef",
+  "status": "initiated",
+  "checkin": "2025-05-16",
+  "checkout": "2025-05-17",
+  "bookingDate": "2025-04-17 13:38 PM",
+  "currency": "NPR",
+  "purchaseTotalPrice": 5476,
+  "stCommission": 1200,
+  "vat": 867,
+  "totalPrice": 7543,
+  "rooms": [
     {
-      "code": "RM-X6NGLV-HITANG",
-      "source": "STR-S-101",
-      "stBookingCode": "RM-X6NGLV-HITANG",
-      "searchKey": "c111110f-501b-414d-b53b-1782baa305ef",
-      "status": "initiated",
-      "checkin": "2025-05-16",
-      "checkout": "2025-05-17",
-      "bookingDate": "2025-04-17 13:38 PM",
-      "currency": "NPR",
-      "purchaseTotalPrice": 5476,
-      "stCommission": 1200,
-      "vat": 867,
-      "totalPrice": 7543,
-      "rooms": [
-        {
-          "type": "DELUXE SINGLE",
-          "description": "DELUXE SINGLE - Breakfast"
-        }
-      ],
-      "guests": [
-        {
-          "title": "Mr.",
-          "givenNames": "Sonaam",
-          "surname": "Hitang"
-        }
-      ],
-      "hotel": {
-        "name": "Norbu Linka",
-        "code": "1611692",
-        "latitude": null,
-        "address": "Thamel 44600 Kathmandu",
-        "longitude": null,
-        "description": null,
-        "photos": [],
-        "policy": {
-          "cancellation": null,
-          "additionalInfo": null
-        }
+      "type": "DELUXE SINGLE",
+        "description": "DELUXE SINGLE - Breakfast"
+    }
+  ],
+  "guests": [
+    {
+      "title": "Mr.",
+      "givenNames": "Sonaam",
+      "surname": "Hitang"
+    }
+  ],
+  "hotel": {
+    "name": "Norbu Linka",
+    "code": "1611692",
+    "latitude": null,
+    "address": "Thamel 44600 Kathmandu",
+    "longitude": null,
+    "description": null,
+    "photos": [],
+    "policy": {
+      "cancellation": null,
+      "additionalInfo": null
       }
     }
+  }
 ```
 
 
