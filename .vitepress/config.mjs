@@ -22,8 +22,9 @@ export default defineConfig({
           { text: 'Ticket Details', link: '/details' },
           { text: 'Ticketing', link: '/ticketing' },
           { text: 'Download eTicket', link: '/download' },
+          { text: 'Send eTicket', link: '/send-eticket' },
           { text: 'All Tickets', link: '/all-tickets' },
-          // { text: 'Postman', link: '/postman' },
+          
           // { text: 'Booking', link: '/booking' },
           // { text: 'Postman', link: '/postman' },
         ]
