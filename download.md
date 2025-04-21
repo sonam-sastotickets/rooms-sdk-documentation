@@ -68,3 +68,13 @@ Authorization : Bearer ey...
     }
 }
 ```
+
+*Case: Invalid booking code or ticket not issued*
+```json
+{
+    "success": false,
+    "data": {
+        "error": "Booking not found."
+    }
+}
+```

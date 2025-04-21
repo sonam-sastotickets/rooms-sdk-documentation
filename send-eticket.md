@@ -55,7 +55,7 @@ Authorization : Bearer ey...
 }
 ```
 
-*Case: Wrong stBookingCode*
+*Case: Invalid booking code or ticket not issued*
 ```json
 {
     "success": false,
