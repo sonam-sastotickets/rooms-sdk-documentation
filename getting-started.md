@@ -8,7 +8,7 @@ To initiate the sdk process, the following JSON configuration must be generated:
     "phone_number": 9800000000, //or unique ID from your system
     "wallet_balance": 30000,
     "success_url": "https://example.sastotickets.com/success",
-    "failure_url": "https://example.sastotickets.com/failure",
+    "failure_url": "https://example.sastotickets.com/failure"
 }
 ```
 > **Note:** *wallet_balance* can be set to null if restriction related to amount is NOT required when booking.
