@@ -20,7 +20,7 @@ Authorization : Bearer ey...
 {
     "stBookingCode" : "{{stBookingCode}}",
     "name" : "Test User",
-    "email" : "user@gmail.com",
+    "email" : "st-user@gmail.com",
     "showAmount" : true                 // true or false to show amount on e-ticket
 }
 ```

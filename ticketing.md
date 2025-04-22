@@ -64,7 +64,7 @@ Authorization : Bearer ey...
             }
         ],
         "contactDetails": {
-            "email": "karkisamir99@gmail.com",
+            "email": "st-user@gmail.com",
             "phone": "9876543200"
         }
     }
