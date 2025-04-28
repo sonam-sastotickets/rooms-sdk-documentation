@@ -4,7 +4,7 @@
 To initiate the sdk process, the following JSON configuration must be generated:
 ```json
 {
-    "access_token": "<token from previous step>",
+    "access_token": "<accessToken from previous step>",
     "phone_number": 9800000000, //or unique ID from your system
     "wallet_balance": 30000,
     "success_url": "https://example.sastotickets.com/success",

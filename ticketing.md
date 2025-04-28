@@ -46,7 +46,7 @@ Authorization : Bearer ey...
             "totalRooms": 1,
             "rooms": [
                 {
-                    "room_Type": "DELUXE SINGLE",
+                    "roomType": "DELUXE SINGLE",
                     "description": "DELUXE SINGLE - Breakfast",
                     "totalRooms": 1,
                     "totalAdults": 1,

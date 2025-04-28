@@ -14,14 +14,14 @@
     "success": true,
     "data": {
         "tokenType": "Bearer",
-        "token": "ey....",
-        "b2b_details": {
-            "full_name": "John Doe",
-            "company_name": "Some Company",
-            "company_code": "IT",
-            "api_username": "company@test.test",
+        "accessToken": "ey....",
+        "b2bDetails": {
+            "fullName": "John Doe",
+            "companyName": "Some Company",
+            "companyCode": "IT",
+            "apiUsername": "company@test.test",
             "email": "company@test.test",
-            "customer_login": "No"
+            "customerLogin": "No"
         }
     }
 }
