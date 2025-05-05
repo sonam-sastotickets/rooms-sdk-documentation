@@ -309,7 +309,7 @@
                     throw new Error(data.data?.error || `Login failed (${res.status})`);
                 }
 
-                const accessToken = data.data?.token;
+                const accessToken = data.data?.accessToken;
 
                 if (!accessToken) {
                     throw new Error("Access token not found in response.");
